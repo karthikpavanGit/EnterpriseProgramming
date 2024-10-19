@@ -1,0 +1,12 @@
+<books>
+    <book>
+        <title>Java Programming</title>
+        <author>James Gosling</author>
+        <price>500</price>
+    </book>
+    <book>
+        <title>Effective Java</title>
+        <author>Joshua Bloch</author>
+        <price>700</price>
+    </book>
+</books>
