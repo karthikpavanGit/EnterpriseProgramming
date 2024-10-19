@@ -1,0 +1,10 @@
+<h:form>
+    <h:outputLabel value="Number 1:"/>
+    <h:inputText value="#{calculatorBean.num1}"/><br/>
+    
+    <h:outputLabel value="Number 2:"/>
+    <h:inputText value="#{calculatorBean.num2}"/><br/>
+    
+    <h:commandButton value="Add" action="#{calculatorBean.add}"/>
+    <h:outputText value="#{calculatorBean.result}"/>
+</h:form>
