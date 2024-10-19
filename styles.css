@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+div {
+    width: 300px;
+    border: 2px solid gray;
+    padding: 10px;
+    margin-bottom: 15px;
+}

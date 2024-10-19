@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>XML Book List with XSLT and CSS</h1>
+    <div id="content"></div>
+    <script>
+        const xsltProcessor = new XSLTProcessor();
+        const xmlDoc = new DOMParser().parseFromString(`<?xml version="1.0" encoding="UTF-8"?>
+            <books>
+                <book>
+                    <title>Java Programming</title>
+                    <author>James Gosling</author>
+                    <price>500</price>
+                </book>
+                <book>
+                    <title>Effective Java</title>
+                    <author>Joshua Bloch</author>
+                    <price>700</price>
+                </book>
+            </books>`, "text/xml");
+        
+        fetch('books.xsl').then(res => res.text()).then(xslt => {
+            const xsltDoc = new DOMParser().parseFromString(xslt, "application/xml");
+            xsltProcessor.importStylesheet(xsltDoc);
+            const resultDoc = xsltProcessor.transformToFragment(xmlDoc, document);
+            document.getElementById('content').appendChild(resultDoc);
+        });
+    </script>
+</body>
+</html>
+
